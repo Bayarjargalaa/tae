@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body.home {
+    background-image: url('/static/other_photo/home-bg.webp');
+    }
+
+  body.about {
+    background-image: url('/static/images/about-bg.jpg');
+  }
+
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url('/static/other_photo/home-bg.webp');
+    background-size: cover; /* Makes the image cover the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: center; /* Centers the image */
+  }
+  
+  @media (max-width: 768px) {
+    body {
+        background-image: url('/static/other_photo/bg_phone.jpg'); /* Гар утсанд зориулсан бага хэмжээний зураг */
+        background-size: contain; /* Зургийг дэлгэцэнд багтаана */
+        background-position: top; /* Дээд талд байрлуулна */
+        align-items: center; /* Дээд талд байрлуулна */
+    }
+    body.home {
+        background-image: url('/static/other_photo/bg_phone.jpg');
+        background-color: dimgray;
+        }
+}
+
+/* Дунд хэмжээтэй дэлгэцэнд (таблет) зориулсан тохиргоо */
+@media (min-width: 769px) and (max-width: 1200px) {
+    body {
+        background-size: cover; /* Бүрэн дүүргэж харуулна */
+        background-position: center; /* Төвд байрлуулна */
+    }
+
+    
+}
+  .navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox ашиглана */
+    gap: 20px; /* Тус бүрийн хоорондын зай */
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-list li {
+    position: relative;
+  }
+  
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px; /* Дотоод зай */
+    display: block; /* Хавтгай болгоно */
+    font-weight: bold;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Босоо жагсаалт болгоно */
+        gap: 10px; /* Зайг багасгана */
+    }
+
+    .nav-list a {
+        font-size: large;
+      }
+
+    .navbar a {
+        padding: 10px; /* Дотоод зайг багасгана */
+    }
+
+    .body {
+        height: auto; /* Фон зургийн өндөр автоматаар болно */
+    }
+}
+  
+  .nav-list a:hover {
+    background-color: #0056b3;
+    border-radius: 4px;
+  }
+  

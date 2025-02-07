@@ -1,0 +1,25 @@
+# Компайл хийсэн файлууд
+*.pyc
+*.class
+
+# Дата эсвэл лог файлууд
+*.log
+*.csv
+*.xlsx
+
+# Нууц тохиргоо
+.env
+config/settings_local.py
+
+# Бүх __pycache__ хавтаснуудыг хасах
+__pycache__/
+
+# media, static, node_modules гэх мэт том фолдеруудыг хасах
+media/
+images/
+node_modules/
+
+# Docker, VS Code, OS-ны файлуудыг хасах
+.dockerignore
+.vscode/
+.DS_Store

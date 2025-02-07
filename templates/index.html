@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Төгс Амин Эрдэнэ ХХК</title>
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static 'other_photo/myicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="home">
+  <nav class="navbar">
+    <ul class="nav-list">
+      {% comment %} <li><a href="#about">Бидний тухай</a></li> {% endcomment %}
+      <li><a href="/items">Барааны жагсаалт</a></li>
+      <li><a href="/contact">Холбоо барих</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

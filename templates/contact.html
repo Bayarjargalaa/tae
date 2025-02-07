@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Холбоо барих</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'other_photo/myicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'static/css/contact_style.css' %}">
+</head>
+
+<body>
+    <div class="contact-container">
+        <div class="header">
+            <a href="{% url 'home' %}" class="home-button">Нүүр хуудас</a>
+            <h1>Холбоо барих</h1>
+        </div>
+
+        <div class="contact-info">
+            <h2>📞 Худалдааны төлөөлөгчид</h2>
+            <ul>
+                <li><strong>Тогтохбаяр</strong> - 89075813 (Зүүн урд бүс)</li>
+                <li><strong>Оюун</strong> - 88090327 (Баруун урд бүс)</li>
+                <li><strong>Тэнгэр</strong> - 89035802 (Баруун хойд бүс)</li>
+                <li><strong>Мөнхбат</strong> - 89075812 (Зүүн хойд бүс)</li>
+                <li><strong>Мөнхжаргал</strong> - 89075814 (Сүлжээ дэлгүүр)</li>
+            </ul>
+
+            <h2>📌 Борлуулагч</h2>
+            <ul>
+                <li><strong>Энхбуянт</strong> - 99027786</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Төгс Амин Эрдэнэ ХХК</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'other_photo/myicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+</head>
+<body>
+    <div class="header">
+        <a href="{% url 'home' %}" class="home-button">Нүүр хуудас</a>
+    </div>
+
+    <h1>Барааны жагсаалт</h1>
+    <div class="product-list">
+        {% for item in items.values %}
+        <div class="product-container">
+            <div class="product-name">{{ item.6 }}</div>
+            
+            <!-- Зураг дээр дарахад томрох линк -->
+            <a href="#lightbox-{{ forloop.counter }}">
+                <img src="{{ item.11 }}" alt="Product Image" class="product-image">
+            </a>
+
+            <div class="product-details">
+                <div class="detail-item">Үйлдвэрлэсэн улс: {{ item.10 }}</div>
+                <div class="detail-item">Хайрцаг дахь тоо: {{ item.9 }}</div>
+                <div class="detail-item">Хэмжээ: {{ item.7 }} {{ item.8 }}</div>
+            </div>
+        </div>
+
+      
+        {% endfor %}
+    </div>
+</body>
+</html>
