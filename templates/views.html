@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery зарцуулна -->
+</head>
+<style>
+    table {
+        width: 600px; /* Хүснэгт бүхий дэлгэцийн бүх талбайг эзлэх */
+        border-collapse: collapse; /* Багаар хавсаргах */
+        justify-content: center; /* Хүснэгтийг голлуулах */
+        
+    }
+    
+    th, td {
+        padding: 8px; /* Хүснэгтний дотор талын зай */
+        text-align: left; /* Текстийг зүүн тийш чиглүүлэх */
+        border: 1px solid #ddd; /* Хязгаарлалтуудыг нэмэх */
+    }
+
+    th {
+        background-color: #f2f2f2; /* Толгой хэсгийн өнгө */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9; /* Солиотой мөрний өнгө */
+    }
+
+    tr:hover {
+        background-color: #f1f1f1; /* Мөр дээр хулгана тавихад өнгө өөрчлөгдөнө */
+    }
+</style>
+
+<body>
+    <h1>Бүх Views</h1>
+    <table id="table">
+        <thead>
+            <tr>
+                <th>#</th>  <!-- Дугаарын багана -->
+                <th>View Name</th>
+                <th>Баганын тоо</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Views will be dynamically added here -->
+            {% for view in views %}
+            <tr>
+                <td>{{ forloop.counter }}</td>  <!-- Мөрийн дугаар -->
+                {% comment %} <td>{{ view.2 }}</td>  <!-- View Name --> {% endcomment %}
+                
+                <td>{{ view.0 }}</td>  <!-- DB_NAME --> 
+                <td>{{ view.1 }}</td>  <!-- Schema -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% comment %} <script>
+        // AJAX хүсэлт хийх
+        $.ajax({
+            url: "{% url 'show_views' %}",  // Django URL
+            method: 'GET',
+            success: function(data) {
+                var tableBody = $('#views-table tbody');
+                tableBody.empty();  // Хуучин өгөгдлийг цэвэрлэх
+
+                // Хэрэв өгөгдөл ирсэн бол хүснэгтэд харуулах
+                if (data.length === 0) {
+                    tableBody.append('<tr><td colspan="2" style="text-align:center;">Өгөгдөл олдсонгүй</td></tr>');
+                } else {
+                    data.forEach(function(view) {
+                        var row = `<tr>
+                                    <td class="view-name">${view[2]}</td>   <!-- View Name -->
+                                    <td>${view[1]}</td>   <!-- Schema -->
+                                  </tr>`;
+                        tableBody.append(row);
+                    });
+                }
+            },
+            error: function() {
+                alert("Error loading views.");
+            }
+        });
+    </script> {% endcomment %}
+</body>
+</html>
